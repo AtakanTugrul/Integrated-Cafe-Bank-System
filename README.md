@@ -1,22 +1,17 @@
 # Integrated-Cafe-Bank-System
-C ile geliştirdiğim bu projede, birbiriyle haberleşen iki farklı sistem tasarladım. Amaç, sadece kod yazmak değil, iki farklı programın aynı veri kaynağını (bakiye.txt) kullanarak nasıl senkronize çalışabileceğini simüle etmekti.
+This is my most complex project so far. It connects two different C programs using a text file as a database.
 
-Kart.c (Banka): Buradan hesabınıza para yatırıp çekebiliyorsunuz. Bakiyeniz anlık olarak kaydediliyor.
+## How does it work?
+There are two programs talking to each other:
+1.  **Bank (ATM)**: You can deposit or withdraw money here. It saves your balance to a file called `bakiye.txt`.
+2.  **Cafe:** You can order food or coffee here. If you pay with a Credit Card, it reads the `bakiye.txt` file and cuts the price from your bank account.
 
-Cafe.c : Buradan sipariş veriyorsunuz. Ödeme kısmında "Kredi Kartı" seçerseniz, program gidip ATM'nin oluşturduğu dosyayı okuyor ve parayı oradan tahsil ediyor.
+## Steps to Run
+Please follow this order, otherwise it might not find the file:
+1.  Run **`Kart.c`** first and add some money.
+2.  Then run **`Cafe.c`** and order something.
+3.  Choose "Credit Card" to see how the balance updates automatically.
 
-bakiye.txt: İki programın ortak kullandığı hafıza. Veriler RAM'de değil, bu dosyada tutulduğu için programı kapatsanız bile bakiyeniz silinmiyor.
-
-
-Önce atm_sistemi.c kodunu çalıştırın ve hesabınıza biraz para yatırın (Dosya oluşması için bu şart).
-
-Daha sonra cafe_otomasyonu.c kodunu çalıştırın ve dilediğiniz siparişi verin.
-
-Ödeme ekranında kartı seçtiğinizde, bakiyenizin otomatik olarak düştüğünü göreceksiniz.
-
-Neler Kullandım?
-C Programlama Dili
-
-File Handling (Dosya İşlemleri): fopen, fprintf, fscanf fonksiyonları ile veri okuma/yazma.
-
-Entegre Sistem Mantığı: Farklı modüllerin veri paylaşımı.
+## What I learned?
+* **File I/O:** Reading and writing to `.txt` files in C.
+* **System Design:** How to make two programs share data.
