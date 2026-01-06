@@ -36,7 +36,7 @@ void odeme(int fiyat){
             bakiye -=fiyat;
             FILE *dosya_yaz = fopen("bakiye.txt", "w");
             if(dosya_yaz == NULL){
-                perror("TEST YAZMA HATASI");
+                perror("DOSYA YAZMA HATASI");
                 return;
             }
 
