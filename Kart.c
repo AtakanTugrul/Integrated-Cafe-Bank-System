@@ -21,7 +21,7 @@ int main(){
     int islemSecimi = 0;
 
 e:
-    printf("\nMerhaba Mehmet Bey. Lutfen yapmak istediginiz islemi secin\n");
+    printf("\nHos geldiniz. Lutfen yapmak istediginiz islemi secin\n");
     printf("1-Para Cekmek\n2-Para Yatirma\n3-Para Gonderme\n4-Durumum");
     scanf("%d", &secim);
 
